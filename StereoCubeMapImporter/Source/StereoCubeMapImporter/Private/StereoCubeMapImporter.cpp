@@ -134,7 +134,6 @@ void FStereoCubeMapImporterModule::PluginButtonClicked()
 						PackageName.RemoveFromEnd(FPaths::GetExtension(PackageName, true));
 						FString FinalLeftPackageName = PackageName;
 						FinalLeftPackageName.Append("_LEFT"); 
-						FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(FinalLeftPackageName));
 
 						UPackage* Package = CreatePackage(nullptr, *FinalLeftPackageName);
 
