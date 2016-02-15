@@ -1,4 +1,6 @@
 // Some copyright should be here...
+#if WITH_EDITOR
+
 #include "StereoCubeMapImporterPrivatePCH.h"
 
 #include "StereoCubeMapImporterStyle.h"
@@ -64,3 +66,5 @@ const ISlateStyle& FStereoCubeMapImporterStyle::Get()
 {
 	return *StyleInstance;
 }
+
+#endif

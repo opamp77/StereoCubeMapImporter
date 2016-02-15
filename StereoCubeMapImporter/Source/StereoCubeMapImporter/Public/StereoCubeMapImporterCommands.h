@@ -1,4 +1,5 @@
 // Some copyright should be here...
+#if WITH_EDITOR
 
 #pragma once
 
@@ -20,3 +21,5 @@ public:
 public:
 	TSharedPtr< FUICommandInfo > PluginAction;
 };
+
+#endif

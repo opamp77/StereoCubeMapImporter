@@ -1,4 +1,5 @@
 // Some copyright should be here...
+#if WITH_EDITOR
 
 #include "StereoCubeMapImporterPrivatePCH.h"
 #include "StereoCubeMapImporterCommands.h"
@@ -11,3 +12,5 @@ void FStereoCubeMapImporterCommands::RegisterCommands()
 }
 
 #undef LOCTEXT_NAMESPACE
+
+#endif

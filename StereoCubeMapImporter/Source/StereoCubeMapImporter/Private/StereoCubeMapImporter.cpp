@@ -1,4 +1,5 @@
 // Some copyright should be here...
+#if WITH_EDITOR
 
 #include "StereoCubeMapImporterPrivatePCH.h"
 
@@ -21,12 +22,11 @@ static const FName StereoCubeMapImporterTabName("Import Stereo Cube");
 void FStereoCubeMapImporterModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-
 	FStereoCubeMapImporterStyle::Initialize();
 	FStereoCubeMapImporterStyle::ReloadTextures();
 
 	FStereoCubeMapImporterCommands::Register();
-
+	
 	PluginCommands = MakeShareable(new FUICommandList);
 
 	PluginCommands->MapAction(
@@ -57,7 +57,6 @@ void FStereoCubeMapImporterModule::ShutdownModule()
 {
 	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
 	// we call this function before unloading the module.
-
 
 
 	FStereoCubeMapImporterStyle::Shutdown();
@@ -349,3 +348,5 @@ void FStereoCubeMapImporterModule::AddToolbarExtension(FToolBarBuilder& Builder)
 #undef LOCTEXT_NAMESPACE
 
 IMPLEMENT_MODULE(FStereoCubeMapImporterModule, StereoCubeMapImporter)
+
+#endif

@@ -1,4 +1,6 @@
 // Some copyright should be here...
+#if WITH_EDITOR
+
 #pragma once
 
 #include "SlateBasics.h"
@@ -28,3 +30,5 @@ private:
 
 	static TSharedPtr< class FSlateStyleSet > StyleInstance;
 };
+
+#endif

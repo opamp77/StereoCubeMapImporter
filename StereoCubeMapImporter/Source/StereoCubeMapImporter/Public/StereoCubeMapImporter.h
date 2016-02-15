@@ -1,4 +1,5 @@
 // Some copyright should be here...
+#if WITH_EDITOR
 
 #pragma once
 
@@ -37,3 +38,5 @@ private:
 private:
 	TSharedPtr<class FUICommandList> PluginCommands;
 };
+
+#endif
