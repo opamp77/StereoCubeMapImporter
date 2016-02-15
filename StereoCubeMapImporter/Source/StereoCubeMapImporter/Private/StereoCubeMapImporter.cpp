@@ -120,7 +120,7 @@ void FStereoCubeMapImporterModule::PluginButtonClicked()
 						SaveAssetDialogConfig.DialogTitleOverride = LOCTEXT("Save Stereo CubeMap", "Save Stereo Cubemap's As");
 						SaveAssetDialogConfig.DefaultPath = TEXT("/Game");
 						SaveAssetDialogConfig.DefaultAssetName = TextureName;
-						SaveAssetDialogConfig.WindowSizeOverride = FVector2D(800.f, 600.f);
+						SaveAssetDialogConfig.WindowSizeOverride = FVector2D(800.f, 500.f);
 						SaveAssetDialogConfig.ExistingAssetPolicy = ESaveAssetDialogExistingAssetPolicy::AllowButWarn; 
 						
 						PackageName = ContentBrowserModule.Get().CreateModalSaveAssetDialog(SaveAssetDialogConfig);
@@ -170,16 +170,15 @@ void FStereoCubeMapImporterModule::PluginButtonClicked()
 						// Notify the asset registry
 						progress.EnterProgressFrame(1.f, LOCTEXT("Creating LEFT asset...", "Creating LEFT asset..."));
 						FAssetRegistryModule::AssetCreated(LeftCubeTexture);
-						LeftCubeTexture->Modify();
 						LeftCubeTexture->PostEditChange();
+						LeftCubeTexture->MarkPackageDirty();
 						progress.EnterProgressFrame(1.f, LOCTEXT("Left CubeMap Generated!", "Left CubeMap Generated!"));
 
 						//////////////////////////////////////////////////////////////////////right//////////////////////////
-						FaceData.Empty();
 						//Create the Package
 						FString FinalRightPackageName = PackageName;
 						FinalRightPackageName.Append("_RIGHT");
-						UPackage* Package2 = CreatePackage(nullptr, *PackageName);
+						UPackage* Package2 = CreatePackage(nullptr, *FinalRightPackageName);
 						
 						//Create the TextureCube
 						UTextureCube* RightCubeTexture = NewObject<UTextureCube>(Package2, FName(*FPaths::GetBaseFilename(FinalRightPackageName)), RF_Standalone | RF_Public);
