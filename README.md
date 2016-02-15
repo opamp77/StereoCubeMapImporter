@@ -10,8 +10,8 @@ The Plugin take a pano stereo cubemap image splits it and generates two standard
 
 If you are not compiling UE4's engine from source you should download one of the latest precompilied windows binaries:
 
-* Updating... please check back later
-* Updating... please check back later
+* [Engine Version 4.9.2](http://www.mediafire.com/download/nziiz1ncf07wadg/StereoCubeMapImporter-ue4.9.2.rar)
+* [Engine Version 4.10.2](http://www.mediafire.com/download/0ukvjd44zgd46s6/StereoCubeMapImporter-ue4.10.2.rar)
 
 The contents of the plugin should be copied to your UE4 installation location.
 So that the StereoCubemapImporter folder resides in the engines plugin folder.
